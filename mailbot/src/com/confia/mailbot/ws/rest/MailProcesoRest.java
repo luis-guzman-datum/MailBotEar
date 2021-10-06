@@ -42,7 +42,7 @@ public class MailProcesoRest {
 	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 	public List<MailProceso> obtenerListaMailProceso() {
 		ConfiaServiceLocator csl = new ConfiaServiceLocator("MailProceso");
-		List<MailProceso> procesos = new ArrayList<MailProceso>();
+		List<MailProceso> procesos = null;
 		try {
 			 procesos = csl.getProcesoFacade().findAll();
 			 return procesos;
