@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  
+  <persistence-unit name="MailBotEap-ejbPU" transaction-type="JTA">
+    
+    <jta-data-source>jdbc/jdbcMailBot</jta-data-source>    
+    <!--
+    <jta-data-source>jdbc/BDCorreos</jta-data-source>
+     -->
+    <class>com.confia.mailbot.model.MailBox</class>
+    <class>com.confia.mailbot.model.MailBitacora</class>
+    <class>com.confia.mailbot.model.MailTail</class>
+    <class>com.confia.mailbot.model.MailAttachment</class>
+    <class>com.confia.mailbot.model.ParametroWeb</class>
+    <class>com.confia.mailbot.model.MailProceso</class>
+    <class>com.confia.mailbot.model.GeTipoCorreo</class>
+    <class>com.confia.mailbot.model.GeTipoCorreoPK</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+    	<property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE" />
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ejbModule"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="oracle.eclipse.tools.weblogic.lib.application/MailBotEnterpriseEar"/>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/slf4j-simple-1.7.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/commons-codec-1.3.jar"/>
+	<classpathentry exported="true" kind="con" path="oracle.eclipse.tools.weblogic.lib.system">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.ejb"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_301">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/quartz-all-1.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/c3p0-0.9.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/quartz-jobs-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Datum-Redsoft/Desktop/escritorio/IN_DEVELOPER/1-CONFIA_MIGRACION_CHATBOOT/programas/MailBotEar/MailBotEjb/ejbModule/lib/slf4j-log4j12-1.7.7.jar"/>
+	<classpathentry kind="lib" path="ejbModule/lib/quartz-2.2.3.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
