@@ -171,18 +171,24 @@ public class MailBoxFacade extends AbstractFacade<MailBox> implements MailBoxFac
 
 		return typedQuery.getResultList();
 	}
+	
+	public String createDate(String date) {
+		String[] arrOfStr = date.split(" ", 6);
+		return arrOfStr[2]+"-"+arrOfStr[1].toUpperCase()+"-"  + arrOfStr[5];
+	}
+	
 
 	@Override
 	public List<MailBoxDto> findByDatesAndStatusOptNQ(Date initDate, Date endDate, List<String> statusList) {
 		String queryString = "Select T.ID_MAIL, T.ID_PROCESO, T.ID_TAIL, T.ESTADO, T.FECHA_ADICION, T.msg From MAIL_BOX T "
-				+ "where T.FECHA_ADICION >= ?1 and T.FECHA_ADICION < ?2 "
-				+ "and (T.ESTADO = ?3 or T.ESTADO = ?4)";
+				+ "where T.FECHA_ADICION >= '"+createDate(initDate.toString())+"' and T.FECHA_ADICION < '"+createDate(endDate.toString())+"' "
+				+ "and (T.ESTADO = 'X' or T.ESTADO = 'R')";
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Query query = getEntityManager().createNativeQuery(queryString);
-		query.setParameter(1, initDate);
+		/*query.setParameter(1, initDate);
 		query.setParameter(2, endDate);
 		query.setParameter(3, "X");
-		query.setParameter(4, "R");
+		query.setParameter(4, "R");*/
 		List<MailBoxDto> dtoList = new ArrayList<MailBoxDto>();
 		List<Object[]> queryResult = query.getResultList();
 		int count = 0;

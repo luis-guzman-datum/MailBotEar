@@ -45,8 +45,10 @@ public class GeTipoCorreoFacade extends AbstractFacade<GeTipoCorreo> implements 
     
 	
     public Map<Integer,String> getTipoCorreos(List<Integer> listaIds){
-    	Query q = getEntityManager().createQuery("select G from GeTipoCorreo G where G.geTipoCorreoPK.tipoCorreo in (:listaIds)");
-		q.setParameter("listaIds", listaIds);
+    	
+    	String va = listaIds.toString().replaceAll("\\[","").replaceAll("\\]","");
+    	Query q = getEntityManager().createQuery("select G from GeTipoCorreo G where G.geTipoCorreoPK.tipoCorreo in ("+va+")");
+		//q.setParameter("listaIds", listaIds);
 		
     	List<GeTipoCorreo> listaTipos = q.getResultList();
     	
