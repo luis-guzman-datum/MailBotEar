@@ -191,11 +191,9 @@ public class MailTailRest {
 		try {
 			ConfiaServiceLocator csl = new ConfiaServiceLocator("MailTail");
 			ConfiaServiceLocator cslScheduler = new ConfiaServiceLocator("SchedulerService");		
-			//TODO: revisar formato decimal con base de datos
-			System.out.println("idTail =>"+ idTail);
-			System.out.println("new BigDecimal(idTail) =>"+ new BigDecimal(idTail));
-			//TODO: Validar si consulta trae valores
-			MailTail mailTail = csl.getTailFacade().find(new BigDecimal(idTail));
+			
+			BigDecimal bigdec = new BigDecimal(idTail);
+			MailTail mailTail = csl.getTailFacade().find(bigdec);
 			System.out.println("mailTail =>"+ mailTail.toString());
 			
 			if (mailTail != null && mailTail.getIdTail() != null) {

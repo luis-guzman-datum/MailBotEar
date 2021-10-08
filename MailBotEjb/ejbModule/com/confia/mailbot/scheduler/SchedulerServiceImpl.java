@@ -40,11 +40,8 @@ public class SchedulerServiceImpl implements SchedulerService {
 
 		schedFactory = new StdSchedulerFactory();
 		try {
-
-			System.out.println("LGUZMAN INICIO ==========> scheduler = schedFactory.getScheduler();");
 			scheduler = schedFactory.getScheduler();
 			scheduler.start();
-			System.out.println("LGUZMAN FIN==========> scheduler = schedFactory.getScheduler();");
 
 		} catch (SchedulerException e) {
 			e.printStackTrace();
@@ -216,11 +213,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 		}
 		/***************************************************************/
 		
-		//scheduler = schedFactory.getScheduler();
-		//scheduler.start();
-		System.out.println("LGUZMAN ====>INICIO getJobGroupNames");
-		System.out.println(scheduler.getJobGroupNames());
-		System.out.println("LGUZMAN ====>FIN  getJobGroupNames");
+
 		
 		String[] names = scheduler.getJobNames(Scheduler.DEFAULT_GROUP);
 		boolean flag = MailBotUtils.checkCurrentJobs(names, tail.getNombre() + "-" + tail.getIdTail().intValue());

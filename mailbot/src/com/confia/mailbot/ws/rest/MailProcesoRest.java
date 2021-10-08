@@ -58,6 +58,7 @@ public class MailProcesoRest {
 	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public ResponseDto editTail(MailProceso mailProceso) {
+		
 		ResponseDto res = new ResponseDto();
 		try {
 			ConfiaServiceLocator csl = new ConfiaServiceLocator("MailProceso");
@@ -87,7 +88,8 @@ public class MailProcesoRest {
 				}
 
 				if (mailProceso.getIdTail() != null) {
-					MailTail tailCheck = csl2.getTailFacade().find(mailProceso.getIdTail());
+					BigDecimal bigdec = new BigDecimal(mailProceso.getIdTail());
+					MailTail tailCheck = csl2.getTailFacade().find(bigdec);
 					if (tailCheck != null && tailCheck.getIdTail() != null) {
 						objectCheck.setIdTail(tailCheck.getIdTail().toBigInteger());
 					} else {
@@ -138,11 +140,6 @@ public class MailProcesoRest {
 	public ResponseDto createProcess(MailProceso mailProceso) {
 		ResponseDto res = new ResponseDto();
 		
-		// TODO
-		System.out.println("LGUZMAN INICIO ====>  CREAR PROCESO DATOS");
-		System.out.println(mailProceso.toString());
-		System.out.println("LGUZMAN FIN ====>  CREAR PROCESO DATOS");
-		
 		try {
 			ConfiaServiceLocator csl = new ConfiaServiceLocator("MailProceso");
 			ConfiaServiceLocator csl2 = new ConfiaServiceLocator("MailTail");
@@ -160,13 +157,8 @@ public class MailProcesoRest {
 				}
 
 				if (mailProceso.getIdTail() != null) {		
-					System.out.println("LGUZMAN INICIO ====>  MailTail tailCheck = csl2.getTailFacade().find(mailProceso.getIdTail());");
-					MailTail tailCheck = csl2.getTailFacade().find(mailProceso.getIdTail());
-					System.out.println("LGUZMAN TOSTR ======> "+ tailCheck.toString());
-					System.out.println("LGUZMAN FIN ====>  MailTail tailCheck = csl2.getTailFacade().find(mailProceso.getIdTail());");
-					
-					
-					
+					BigDecimal bigdec = new BigDecimal(mailProceso.getIdTail());
+					MailTail tailCheck = csl2.getTailFacade().find(bigdec);
 					if (tailCheck != null && tailCheck.getIdTail() != null) {
 						mailProceso.setIdTail(tailCheck.getIdTail().toBigInteger());
 					} else {
